@@ -33,15 +33,17 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Remove existing Terraform version
-        run: sudo rm -rf $(which terraform)
+        run: |
+          sudo rm -rf $(which terraform)
+          sudo rm -rf /usr/local/bin/terraform
+          sudo rm -rf /usr/bin/terraform
 
-      - name: Setup Terraform with specified version on the runner
-        uses: hashicorp/setup-terraform@v2
-        with:
-          terraform_version: 1.8.5
-
-      - name: Set Terraform version in PATH
-        run: echo "/home/runner/.terraform/bin" >> $GITHUB_PATH
+      - name: Install Terraform manually
+        run: |
+          wget https://releases.hashicorp.com/terraform/1.8.5/terraform_1.8.5_linux_amd64.zip
+          unzip terraform_1.8.5_linux_amd64.zip
+          sudo mv terraform /usr/local/bin/
+          terraform version
 
       - name: Check Terraform version
         run: terraform version
