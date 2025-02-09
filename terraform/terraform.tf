@@ -27,13 +27,15 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "gigigarugamba"
+    bucket = "gitopsina"
     key    = "terraform.tfstate"
-    region = "us-east-2"
+    region = "us-east-1"
   }
 
+<<<<<<< HEAD
   required_version = ">= 1.0.0, <= 1.10.3"
+=======
+  required_version = "1.10.5"
+>>>>>>> stage
 }
-##
-##
-##
+
