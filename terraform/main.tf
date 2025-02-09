@@ -13,4 +13,13 @@ locals {
   cluster_name = var.clusterName
 }
 
+terraform {
+  backend "s3" {
+    bucket         = "gigigarugamba"
+    key            = "dev/terraform.tfstate"
+    region         = "us-east-2"
+  }
+}
+
+
 ##
