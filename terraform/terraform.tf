@@ -32,10 +32,6 @@ terraform {
     region = "us-east-1"
   }
 
-<<<<<<< HEAD
-  required_version = ">= 1.0.0, <= 1.10.3"
-=======
   required_version = "1.10.5"
->>>>>>> stage
 }
 
