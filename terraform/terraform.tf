@@ -26,7 +26,7 @@ terraform {
     }
   }
 
- backend "s3" {
+  backend "s3" {
     bucket = "gitopsina"
     key    = "terraform.tfstate"
     region = "us-east-1"
@@ -34,4 +34,4 @@ terraform {
 
   required_version = "1.10.5"
 }
-#
+
