@@ -15,9 +15,9 @@ locals {
 
 terraform {
   backend "s3" {
-    bucket         = "gigigarugamba"
+    bucket         = "gitopsina"
     key            = "dev/terraform.tfstate"
-    region         = "us-east-2"
+    region         = "us-east-1"
   }
 }
 
